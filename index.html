@@ -5,10 +5,16 @@
     <meta charset="utf-8">
     <title>Hello JavaScript</title>
 </head>
+
 <body>
-    <p id='p1'></p>
+    <p id='p2'>Hello World</p>
+    <input id='txt1'>
 </body>
+
 <script>
-    document.getElementById('p1').innerHTML = 'Hello World!';
+    var p = document.getElementById('p2');
+    var i = document.getElementById('txt1');
+    i.oninput = function () {
+        p.innerHTML = i.value;
+    }
 </script>
-</html>
