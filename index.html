@@ -2,12 +2,27 @@
 <HTML lang="en-US">
 
 <head>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.1/angular.min.js"> </script>
+    <title>Angular JS Module</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.1/angular.min.js">
+    </script>
 </head>
 
-<body ng-app="">
-    <p>Enter Name : <input type="text" ng-model="full_name"></p>
-    <h2>Hello <span ng-bind="full_name"></span> </h2>
+<body ng-app="myApp">
+    <h2>AngularJS Example</h2>
+
+    <main ng-controller="myCtrl">
+
+        <section><label>First Name: </label><input type="text" ng-model="firstName"></section>
+        <section><label>Last Name: </label><input type="text" ng-model="lastName"></section>
+        <p>Full Name: {{firstName + " " + lastName}}</p>
+    </main>
+
+    <script>
+        angular.module('myApp', []).controller('myCtrl', function ($scope) {   // create controller
+            $scope.firstName = "John";
+            $scope.lastName = "Doe";
+        });
+    </script>
 </body>
 
 </HTML>
